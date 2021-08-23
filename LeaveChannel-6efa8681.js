@@ -276,8 +276,8 @@ var LeaveChannel = function LeaveChannel(props) {
   return /*#__PURE__*/React__default.createElement(Modal, {
     onCancel: onCloseModal,
     onSubmit: onLeaveChannel,
-    submitText: "Leave",
-    titleText: "Leave this channel?"
+    submitText: "Delete",
+    titleText: "Delete this conversation?"
   });
 };
 

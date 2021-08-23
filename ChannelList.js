@@ -750,7 +750,7 @@ function AddChannel(_ref) {
     width: "24px",
     height: "24px"
   })), showModal && step === 0 && /*#__PURE__*/React__default.createElement(Modal, {
-    titleText: "New channel",
+    titleText: stringSet.MODAL__CREATE_CHANNEL__TITLE,
     hideFooter: true,
     onCancel: function onCancel() {
       setShowModal(false);
@@ -779,7 +779,7 @@ function AddChannel(_ref) {
   }), /*#__PURE__*/React__default.createElement(Label, {
     type: LabelTypography.SUBTITLE_1,
     color: LabelColors.ONBACKGROUND_1
-  }, "Group")), isSupergroupAvailable && /*#__PURE__*/React__default.createElement("div", {
+  }, "Pick Users")), isSupergroupAvailable && /*#__PURE__*/React__default.createElement("div", {
     className: "sendbird-add-channel__rectangle",
     onClick: function onClick() {
       setType('supergroup');
