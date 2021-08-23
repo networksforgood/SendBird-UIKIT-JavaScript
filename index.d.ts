@@ -417,6 +417,7 @@ interface ChannelSettingsProps {
   renderUserProfile?: (props: RenderUserProfileProps) => React.ReactNode;
   queries?: ChannelSettingsQueries;
 }
+
 interface AppProps {
   appId: string;
   userId: string;
@@ -429,6 +430,7 @@ interface AppProps {
   disableUserProfile?: boolean;
   showSearchIcon?: boolean;
   renderUserProfile?: (props: RenderUserProfileProps) => React.ReactNode;
+  renderHeader?: () => React.ReactNode;
   onProfileEditSuccess?(user: Sendbird.User): void;
   config?: SendBirdProviderConfig;
   useReaction?: boolean;

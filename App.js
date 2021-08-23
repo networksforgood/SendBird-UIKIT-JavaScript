@@ -146,6 +146,7 @@ function App(props) {
       stringSet = props.stringSet,
       allowProfileEdit = props.allowProfileEdit,
       disableUserProfile = props.disableUserProfile,
+      renderHeader = props.renderHeader,
       renderUserProfile = props.renderUserProfile,
       showSearchIcon = props.showSearchIcon,
       onProfileEditSuccess = props.onProfileEditSuccess,
@@ -189,6 +190,7 @@ function App(props) {
     colorSet: colorSet,
     disableUserProfile: disableUserProfile,
     renderUserProfile: renderUserProfile,
+    renderHeader: renderHeader,
     imageCompression: imageCompression
   }, /*#__PURE__*/React__default.createElement("div", {
     className: "sendbird-app__wrap"
@@ -196,6 +198,8 @@ function App(props) {
     className: "sendbird-app__channellist-wrap"
   }, /*#__PURE__*/React__default.createElement(ChannelList, {
     allowProfileEdit: allowProfileEdit,
+    renderUserProfile: renderUserProfile,
+    renderHeader: renderHeader,
     onProfileEditSuccess: onProfileEditSuccess,
     onChannelSelect: function onChannelSelect(channel) {
       setStartingPoint(null);
@@ -263,6 +267,7 @@ App.propTypes = {
   allowProfileEdit: PropTypes.bool,
   disableUserProfile: PropTypes.bool,
   renderUserProfile: PropTypes.func,
+  renderHeader: PropTypes.func,
   onProfileEditSuccess: PropTypes.func,
   config: PropTypes.shape({
     // None Error Warning Info 'All/Debug'
@@ -290,6 +295,7 @@ App.defaultProps = {
   disableUserProfile: false,
   showSearchIcon: false,
   renderUserProfile: null,
+  renderHeader: null,
   config: {},
   useReaction: true,
   useMessageGrouping: true,
