@@ -2316,6 +2316,9 @@ function OutgoingUserMessage(_ref) {
       menuDisplaying = _useState6[0],
       setMenuDisplaying = _useState6[1];
 
+  var _useContext = useContext(LocalizationContext),
+    stringSet = _useContext.stringSet;
+
   var isMessageSent = getIsSentFromStatus$2(status);
   var showReactionAddButton = useReaction && emojiAllMap.size > 0 && getIsSentFromSendingStatus$2(message);
 
@@ -2389,7 +2392,7 @@ function OutgoingUserMessage(_ref) {
           copyToClipboard$1(message.message);
           closeDropdown();
         }
-      }, "Copy"), isMessageSent && /*#__PURE__*/React__default.createElement(MenuItem, {
+      }, stringSet.CONTEXT_MENU_DROPDOWN__COPY), isMessageSent && /*#__PURE__*/React__default.createElement(MenuItem, {
         onClick: function onClick() {
           if (disabled) {
             return;
@@ -2398,12 +2401,12 @@ function OutgoingUserMessage(_ref) {
           showEdit(true);
           closeDropdown();
         }
-      }, "Edit"), message && message.isResendable && message.isResendable() && /*#__PURE__*/React__default.createElement(MenuItem, {
+      }, stringSet.CONTEXT_MENU_DROPDOWN__EDIT), message && message.isResendable && message.isResendable() && /*#__PURE__*/React__default.createElement(MenuItem, {
         onClick: function onClick() {
           resendMessage(message);
           closeDropdown();
         }
-      }, "Resend"), /*#__PURE__*/React__default.createElement(MenuItem, {
+      }, stringSet.CONTEXT_MENU_DROPDOWN__RESEND), /*#__PURE__*/React__default.createElement(MenuItem, {
         onClick: function onClick() {
           if (disabled) {
             return;
@@ -2412,7 +2415,7 @@ function OutgoingUserMessage(_ref) {
           showRemove(true);
           closeDropdown();
         }
-      }, "Delete"));
+      }, stringSet.CONTEXT_MENU_DROPDOWN__DELETE));
     }
   }), isMessageSent && showReactionAddButton && /*#__PURE__*/React__default.createElement(ContextMenu, {
     menuTrigger: function menuTrigger(toggleDropdown) {
@@ -2515,6 +2518,9 @@ function IncomingUserMessage(_ref2) {
       _useState12 = _slicedToArray(_useState11, 2),
       menuDisplaying = _useState12[0],
       setMenuDisplaying = _useState12[1];
+
+  var _useContext = useContext(LocalizationContext),
+      stringSet = _useContext.stringSet;
 
   var showReactionAddButton = useReaction && emojiAllMap && emojiAllMap.size > 0;
   var showEmojiReactions = useReaction && message.reactions && message.reactions.length > 0;
@@ -2683,7 +2689,7 @@ function IncomingUserMessage(_ref2) {
           copyToClipboard$1(message.message);
           closeDropdown();
         }
-      }, "Copy"));
+      }, stringSet.CONTEXT_MENU_DROPDOWN__COPY));
     }
   })), !chainBottom && !(mousehover || moreActive || menuDisplaying) && /*#__PURE__*/React__default.createElement(Label, {
     className: "sendbird-user-message__sent-at",
@@ -3586,6 +3592,9 @@ function OutgoingFileMessage(_ref2) {
       menuDisplaying = _useState6[0],
       setMenuDisplaying = _useState6[1];
 
+  var _useContext = useContext(LocalizationContext),
+      stringSet = _useContext.stringSet;
+
   var MemoizedEmojiListItems = memoizedEmojiListItems;
   var isMessageSent = getIsSentFromStatus$3(status);
   var showReactionAddButton = useReaction && emojiAllMap && emojiAllMap.size > 0 && getIsSentFromSendingStatus$3(message);
@@ -3659,7 +3668,7 @@ function OutgoingFileMessage(_ref2) {
           resendMessage(message);
           closeDropdown();
         }
-      }, "Resend"), /*#__PURE__*/React__default.createElement(MenuItem, {
+      }, stringSet.CONTEXT_MENU_DROPDOWN__RESEND), /*#__PURE__*/React__default.createElement(MenuItem, {
         onClick: function onClick() {
           if (disabled) {
             return;
@@ -3668,7 +3677,7 @@ function OutgoingFileMessage(_ref2) {
           showRemove(true);
           closeDropdown();
         }
-      }, "Delete"));
+      }, stringSet.CONTEXT_MENU_DROPDOWN__DELETE));
     }
   }), showReactionAddButton && /*#__PURE__*/React__default.createElement(ContextMenu, {
     menuTrigger: function menuTrigger(toggleDropdown) {
@@ -3986,7 +3995,7 @@ var RemoveMessage = function RemoveMessage(props) {
   return /*#__PURE__*/React__default.createElement(Modal, {
     onCancel: onCloseModal,
     onSubmit: onDeleteMessage,
-    submitText: "Delete",
+    submitText: stringSet.CONTEXT_MENU_DROPDOWN__DELETE,
     titleText: stringSet.MODAL__DELETE_MESSAGE__TITLE
   });
 };
@@ -4139,7 +4148,7 @@ function OutgoingUnknownMessage(_ref2) {
           showRemove(true);
           closeDropdown();
         }
-      }, "Delete"));
+      }, stringSet.CONTEXT_MENU_DROPDOWN__DELETE));
     }
   })), !chainBottom && !(mousehover || moreActive || menuDisplaying) && /*#__PURE__*/React__default.createElement("div", {
     className: "sendbird-outgoing-unknown-message__message-status"
