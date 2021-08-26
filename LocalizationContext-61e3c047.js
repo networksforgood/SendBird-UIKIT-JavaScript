@@ -342,6 +342,8 @@ var getStringSet = function getStringSet() {
       CHANNEL_SETTING__OPERATORS__TITLE: 'Operators',
       CHANNEL_SETTING__OPERATORS__TITLE_ALL: 'All operators',
       CHANNEL_SETTING__OPERATORS__TITLE_ADD: 'Add operator',
+      CHANNEL_SETTING__OPERATORS__PROMOTE: 'Promote to operator',
+      CHANNEL_SETTING__OPERATORS__DEMOTE: 'Demote operator',
       CHANNEL_SETTING__MUTED_MEMBERS__TITLE: 'Muted members',
       CHANNEL_SETTING__MUTED_MEMBERS__TITLE_ALL: 'All muted members',
       CHANNEL_SETTING__BANNED_MEMBERS__TITLE: 'Banned members',

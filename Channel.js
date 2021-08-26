@@ -5824,6 +5824,16 @@ function ChatHeader(props) {
     fillColor: IconColors.PRIMARY,
     width: "24px",
     height: "24px"
+  })), /*#__PURE__*/React__default.createElement(IconButton, {
+    className: "sendbird-chat-header__right__info",
+    width: "32px",
+    height: "32px",
+    onClick: onActionClick
+  }, /*#__PURE__*/React__default.createElement(Icon, {
+    type: IconTypes.INFO,
+    fillColor: IconColors.PRIMARY,
+    width: "24px",
+    height: "24px"
   }))));
 }
 ChatHeader.propTypes = {

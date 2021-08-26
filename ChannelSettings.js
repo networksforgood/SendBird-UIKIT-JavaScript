@@ -693,7 +693,7 @@ function OperatorsModal(_a) {
                 });
                 closeDropdown();
               }
-            }, "Dismiss operator"));
+            }, stringSet.CHANNEL_SETTING__OPERATORS__DEMOTE));
           }
         });
       }
@@ -887,7 +887,7 @@ var OperatorList = function OperatorList(_a) {
                 });
                 closeDropdown();
               }
-            }, "Dismiss operator"));
+            }, stringSet.CHANNEL_SETTING__OPERATORS__DEMOTE));
           }
         });
       }
@@ -1018,6 +1018,8 @@ function InviteMembers(_a) {
 }
 
 var MemberList = function MemberList(_a) {
+  var stringSet = useContext(LocalizationContext).stringSet;
+
   var sdk = _a.sdk,
       channel = _a.channel,
       userQueryCreator = _a.userQueryCreator,
@@ -1116,7 +1118,7 @@ var MemberList = function MemberList(_a) {
                   });
                 }
               }
-            }, member.role !== 'operator' ? 'Promote to operator' : 'Demote operator'), // No muted members in broadcast channel
+            }, member.role !== 'operator' ? stringSet.CHANNEL_SETTING__OPERATORS__PROMOTE : stringSet.CHANNEL_SETTING__OPERATORS__DEMOTE), // No muted members in broadcast channel
             !channel.isBroadcast && /*#__PURE__*/React__default.createElement(MenuItem, {
               onClick: function onClick() {
                 if (member.isMuted) {
@@ -1721,41 +1723,7 @@ function AdminPannel(_a) {
         channel: channel
       }));
     }
-  }), // cannot frozen broadcast channel
-  !channel.isBroadcast && /*#__PURE__*/React__default.createElement("div", {
-    className: "sendbird-channel-settings__freeze"
-  }, /*#__PURE__*/React__default.createElement(Icon, {
-    type: IconTypes.FREEZE,
-    fillColor: IconColors.PRIMARY,
-    width: 24,
-    height: 24,
-    className: "sendbird-channel-settings__accordion-icon"
-  }), /*#__PURE__*/React__default.createElement(Label, {
-    type: LabelTypography.SUBTITLE_1,
-    color: LabelColors.ONBACKGROUND_1
-  }, stringSet.CHANNEL_SETTING__FREEZE_CHANNEL), /*#__PURE__*/React__default.createElement("div", {
-    className: "sendbird-channel-settings__frozen-icon"
-  }, frozen ? /*#__PURE__*/React__default.createElement(Icon, {
-    onClick: function onClick() {
-      channel.unfreeze(function () {
-        setFrozen(false);
-      });
-    },
-    type: IconTypes.TOGGLE_ON,
-    fillColor: IconColors.PRIMARY,
-    width: 44,
-    height: 24
-  }) : /*#__PURE__*/React__default.createElement(Icon, {
-    onClick: function onClick() {
-      channel.freeze(function () {
-        setFrozen(true);
-      });
-    },
-    type: IconTypes.TOGGLE_OFF,
-    fillColor: IconColors.PRIMARY,
-    width: 44,
-    height: 24
-  }))));
+  }));
 }
 
 var COMPONENT_CLASS_NAME = 'sendbird-channel-settings';
