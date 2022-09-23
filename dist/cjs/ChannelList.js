@@ -263,7 +263,7 @@ function reducer(state, action) {
       var _filteredChannels = state.allChannels.filter(function (c) {
         return c.url !== _channel2.url;
       });
-
+      console.log("CHANNEL LIST USER LEFT");
       return LocalizationContext._objectSpread2(
         LocalizationContext._objectSpread2({}, state),
         {},
