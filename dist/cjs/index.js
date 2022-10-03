@@ -8250,7 +8250,6 @@ var index = (function (exports, React__default, PropTypes, Sb, cssVars, reactDom
       }
 
       case ON_USER_LEFT: {
-        console.log("ON_USER_LEFT");
         var _action$payload = action.payload,
           _channel2 = _action$payload.channel,
           isMe = _action$payload.isMe;
@@ -8306,7 +8305,7 @@ var index = (function (exports, React__default, PropTypes, Sb, cssVars, reactDom
           {
             currentChannel:
               isMe && _channel2.url === state.currentChannel
-                ? _filteredChannels[0].url
+                ? _filteredChannels[0].url || ""
                 : state.currentChannel,
             allChannels: _filteredChannels,
           }

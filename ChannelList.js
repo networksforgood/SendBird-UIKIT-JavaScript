@@ -255,7 +255,6 @@ function reducer(state, action) {
     }
 
     case ON_USER_LEFT: {
-      console.log("ON_USER_LEFT");
       var _action$payload = action.payload,
         _channel2 = _action$payload.channel,
         isMe = _action$payload.isMe;
@@ -311,7 +310,7 @@ function reducer(state, action) {
         {
           currentChannel:
             isMe && _channel2.url === state.currentChannel
-              ? _filteredChannels[0].url
+              ? _filteredChannels[0].url || ""
               : state.currentChannel,
           allChannels: _filteredChannels,
         }
