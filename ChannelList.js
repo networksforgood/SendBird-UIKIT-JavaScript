@@ -310,7 +310,7 @@ function reducer(state, action) {
         {
           currentChannel:
             isMe && _channel2.url === state.currentChannel
-              ? _filteredChannels[0].url || ""
+              ? (_filteredChannels[0] || {}).url || ""
               : state.currentChannel,
           allChannels: _filteredChannels,
         }
